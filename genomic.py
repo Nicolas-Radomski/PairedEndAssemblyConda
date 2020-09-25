@@ -4,8 +4,8 @@
 #### author: Nicolas Radomski ####
 # usefull functions from a personal module
 # the present module genomic.py (version 20200923, Septembre 2020) was prepared and tested with Python and Conda packages below (Name/Version/Build/Channel)
-#- python/3.7.8/h6f2ec95_1_cpython/conda-forge \
-#- biopython/1.78/py37h8f50634_0/conda-forge \
+#- python/3.7.8/h6f2ec95_1_cpython/conda-forge
+#- biopython/1.78/py37h8f50634_0/conda-forge
 # for instance the function congratulation of the module genomic.py must be called in the main script like below:
 # import genomic
 # genomic.congratulation()

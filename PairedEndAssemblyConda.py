@@ -7,12 +7,12 @@
 # based on paired-end reads from a single genomic sample
 # the module genomic.py has to be with the present main script PairedEndAssemblyConda.py to lunch it properly
 # the present main script PairedEndAssemblyConda.py and module genomic.py (version 20200923, September 2020) were prepared and tested with Python and Conda packages below (Name/Version/Build/Channel)
-#- prokka/1.14.6/pl526_0/bioconda \
-#- python/3.7.8/h6f2ec95_1_cpython/conda-forge \
-#- biopython/1.78/py37h8f50634_0/conda-forge \
-#- bbmap/38.84/h516909a_0/bioconda \
-#- spades/3.13.1/0/bioconda \
-#- quast/5.0.2/py37pl526hb5aa323_2/bioconda \
+#- prokka/1.14.6/pl526_0/bioconda
+#- python/3.7.8/h6f2ec95_1_cpython/conda-forge
+#- biopython/1.78/py37h8f50634_0/conda-forge
+#- bbmap/38.84/h516909a_0/bioconda
+#- spades/3.13.1/0/bioconda
+#- quast/5.0.2/py37pl526hb5aa323_2/bioconda
 #- trimmomatic/0.39/1/bioconda
 # the present main script PairedEndAssemblyConda.py executes more presisly the commands below
 # Execute /global/conda/envs/PairedEndAssembly/bin/bbnorm.sh in=/global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/ERR3997398_R1.fastq.gz in2=/global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/ERR3997398_R2.fastq.gz out=/global/bio/projets/GAMeR/Nicolas-Radomski/Python/ERR3997398/1_normalization/ERR3997398_R1_N.fastq.gz out2=/global/bio/projets/GAMeR/Nicolas-Radomski/Python/ERR3997398/1_normalization/ERR3997398_R2_N.fastq.gz target=100 threads=48
