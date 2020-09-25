@@ -56,6 +56,6 @@ for l in `cat list_of_IDs.lst`; do \
 done >> commands.lst
 ## remove space before _R1.fastq.gz and _R2.fastq.gz in the file commands.lst
 sed -i "s@ _R1.fastq.gz@_R1.fastq.gz@" commands.lst \
-sed -i "s@ _R2.fastq.gz@_R2.fastq.gz@" commands.lst \
+sed -i "s@ _R2.fastq.gz@_R2.fastq.gz@" commands.lst
 ## lunch Bash commands of the file commands.lst with sarray
 sarray -p Research --cpus-per-task=48 -e %x.%N.%j.err -o %x.%N.%j.out --job-name=test-20200925 commands.lst
