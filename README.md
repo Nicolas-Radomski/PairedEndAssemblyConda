@@ -52,6 +52,9 @@ python /global/bio/projets/GAMeR/Nicolas-Radomski/Python/PairedEndAssemblyConda.
 rm commands.lst
 ```
 ## creat a file list_of_IDs.lst including a list of ID sample to process
+```
+gedit list_of_IDs.lst
+```
 ## creat a file commands.lst including a list of Bash commands
 ```
 for l in `cat list_of_IDs.lst`; do 
