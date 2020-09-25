@@ -15,7 +15,7 @@ The main script PairedEndAssemblyConda.py and module genomic.py (version 2020092
 - spades/3.13.1/0/bioconda
 - quast/5.0.2/py37pl526hb5aa323_2/bioconda
 - trimmomatic/0.39/1/bioconda
-# Build the Conda Environment PairedEndAssembly
+# Building of the Conda Environment PairedEndAssembly
 ## 1/ From available targeted Conda packages
 ```
 conda activate
@@ -56,7 +56,7 @@ conda update -c bioconda quast
 conda install -c bioconda trimmomatic
 conda update -c bioconda trimmomatic
 ```
-# Test the Python script PairedEndAssemblyConda.py
+# Lunching of the Python script PairedEndAssemblyConda.py
 ## 1/ With a single set of paired-end reads
 ### 1.1/ prepare a single command in a Bash script (bash_PairedEndAssemblyConda.sh)
 ```
