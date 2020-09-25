@@ -3,7 +3,7 @@
 
 #### author: Nicolas Radomski ####
 # version for conda in a cluster: conda enviroment PairedEndAssembly
-# run BBnorn (step 1_normalization), Trimmomatic (step 2_trimming), Spades (step 3_assembly), prokka (4_annotation) and Quast (5_quality) 
+# run BBnorn (step 1_normalization), Trimmomatic (step 2_trimming), Spades (step 3_assembly), Prokka (4_annotation) and Quast (5_quality) 
 # based on paired-end reads from a single genomic sample
 # the module genomic.py has to be with the present main script PairedEndAssemblyConda.py to lunch it properly
 # the present main script PairedEndAssemblyConda.py and module genomic.py (version 20200923, September 2020) were prepared and tested with Python and Conda packages below (Name/Version/Build/Channel)
