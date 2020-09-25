@@ -29,20 +29,20 @@ conda install -c bioconda trimmomatic
 #SBATCH --cpus-per-task=48
 #SBATCH --job-name=test-20200922
 source /global/conda/bin/activate;conda activate PairedEndAssembly;
-python /global/bio/projets/GAMeR/Nicolas-Radomski/Python/PairedEndAssemblyConda.py \\
-	-t 48
-	-n 100
-	-l 500
-	-R1 /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/ERR3997398_R1.fastq.gz
-	-R2 /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/ERR3997398_R2.fastq.gz
-	-adap /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/NexteraPE-PE.fa
-	-prot /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/Enteritidis_P125109/Enteritidis_P125109_prot.fasta
-	-nucl /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/Enteritidis_P125109/Enteritidis_P125109.fasta
-	-coor /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/Enteritidis_P125109/Enteritidis_P125109.gff3
-	-norm /global/conda/envs/PairedEndAssembly/bin/bbnorm.sh
-	-trim /global/conda/envs/PairedEndAssembly/bin/trimmomatic
-	-denovo /global/conda/envs/PairedEndAssembly/bin/spades.py
-	-annot /global/conda/envs/PairedEndAssembly/bin/prokka
+python /global/bio/projets/GAMeR/Nicolas-Radomski/Python/PairedEndAssemblyConda.py \
+	-t 48 \
+	-n 100 \
+	-l 500 \
+	-R1 /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/ERR3997398_R1.fastq.gz \
+	-R2 /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/ERR3997398_R2.fastq.gz \
+	-adap /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/NexteraPE-PE.fa \
+	-prot /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/Enteritidis_P125109/Enteritidis_P125109_prot.fasta \
+	-nucl /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/Enteritidis_P125109/Enteritidis_P125109.fasta \
+	-coor /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/Enteritidis_P125109/Enteritidis_P125109.gff3 \
+	-norm /global/conda/envs/PairedEndAssembly/bin/bbnorm.sh \
+	-trim /global/conda/envs/PairedEndAssembly/bin/trimmomatic \
+	-denovo /global/conda/envs/PairedEndAssembly/bin/spades.py \
+	-annot /global/conda/envs/PairedEndAssembly/bin/prokka \
 	-qual /global/conda/envs/PairedEndAssembly/bin/quast.py
 ```
 # Run mutiple Bash commands to test the Python script PairedEndAssemblyConda.py with multiple paired-end reads
