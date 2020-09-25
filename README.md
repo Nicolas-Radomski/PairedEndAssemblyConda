@@ -1,6 +1,3 @@
-# Author
-Nicolas Radomski
-
 # Usage
 The Python script PairedEndAssemblyConda.py aims at performing de novo assembly of bacterial genomes from a Python module genomic.py and a Conda environment PairedEndAssembly.
 This workflow run BBnorn (step 1_normalization), Trimmomatic (step 2_trimming), Spades (step 3_assembly), prokka (4_annotation) and Quast (5_quality), successively.
@@ -32,21 +29,21 @@ conda install -c bioconda trimmomatic
 #SBATCH --cpus-per-task=48
 #SBATCH --job-name=test-20200922
 source /global/conda/bin/activate;conda activate PairedEndAssembly;
-python /global/bio/projets/GAMeR/Nicolas-Radomski/Python/PairedEndAssemblyConda.py
- -t 48
- -n 100
- -l 500
- -R1 /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/ERR3997398_R1.fastq.gz
- -R2 /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/ERR3997398_R2.fastq.gz
- -adap /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/NexteraPE-PE.fa
- -prot /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/Enteritidis_P125109/Enteritidis_P125109_prot.fasta
- -nucl /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/Enteritidis_P125109/Enteritidis_P125109.fasta
- -coor /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/Enteritidis_P125109/Enteritidis_P125109.gff3
- -norm /global/conda/envs/PairedEndAssembly/bin/bbnorm.sh
- -trim /global/conda/envs/PairedEndAssembly/bin/trimmomatic
- -denovo /global/conda/envs/PairedEndAssembly/bin/spades.py
- -annot /global/conda/envs/PairedEndAssembly/bin/prokka
- -qual /global/conda/envs/PairedEndAssembly/bin/quast.py
+python /global/bio/projets/GAMeR/Nicolas-Radomski/Python/PairedEndAssemblyConda.py \\
+	-t 48
+	-n 100
+	-l 500
+	-R1 /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/ERR3997398_R1.fastq.gz
+	-R2 /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/ERR3997398_R2.fastq.gz
+	-adap /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/NexteraPE-PE.fa
+	-prot /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/Enteritidis_P125109/Enteritidis_P125109_prot.fasta
+	-nucl /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/Enteritidis_P125109/Enteritidis_P125109.fasta
+	-coor /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/Enteritidis_P125109/Enteritidis_P125109.gff3
+	-norm /global/conda/envs/PairedEndAssembly/bin/bbnorm.sh
+	-trim /global/conda/envs/PairedEndAssembly/bin/trimmomatic
+	-denovo /global/conda/envs/PairedEndAssembly/bin/spades.py
+	-annot /global/conda/envs/PairedEndAssembly/bin/prokka
+	-qual /global/conda/envs/PairedEndAssembly/bin/quast.py
 ```
 # Run mutiple Bash commands to test the Python script PairedEndAssemblyConda.py with multiple paired-end reads
 ## remove the file comands.lst
@@ -69,3 +66,5 @@ sed -i "s@ _R2.fastq.gz@_R2.fastq.gz@" commands.lst
 ```
 sarray -p Research --cpus-per-task=48 -e %x.%N.%j.err -o %x.%N.%j.out --job-name=test-20200925 commands.lst
 ```
+# Author
+Nicolas Radomski
