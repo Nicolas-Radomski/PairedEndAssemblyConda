@@ -7,7 +7,7 @@ The main Python script PairedEndAssemblyConda.py aims at performing de novo asse
 - The user can use his own dependancies in his own bin.
 - The paired-end reads must be encoded ID_R1.fastq.gz and ID_R2.fastq.gz with ID meaning sample identifier.
 # Dependencies
-The main script PairedEndAssemblyConda.py and module genomic.py (version 20200923) were prepared and tested with dependencies below. \
+The main script PairedEndAssemblyConda.py and module genomic.py (version 20200923) were prepared and tested with Conda packages below. \
 Name                    Version                   Build  Channel \
 prokka                    1.14.6                  pl526_0    bioconda \
 python                    3.7.8           h6f2ec95_1_cpython    conda-forge \
