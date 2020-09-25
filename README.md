@@ -91,7 +91,7 @@ sbatch -p Research --cpus-per-task=48 -e %x.%N.%j.err -o %x.%N.%j.out sbatch_Pai
 ```
 rm commands.lst
 ```
-## creat a file list_of_IDs.lst including a list of ID sample to process
+## creat a file list_of_IDs.lst including a list of ID samples to process
 ```
 gedit list_of_IDs.lst
 ```
