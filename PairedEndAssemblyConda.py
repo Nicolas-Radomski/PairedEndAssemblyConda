@@ -14,15 +14,14 @@
 # Execute /global/conda/envs/PairedEndAssembly/bin/quast.py -o /global/bio/projets/GAMeR/Nicolas-Radomski/Python/ERR3997398/5_quality/ -r /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/Enteritidis_P125109/Enteritidis_P125109.fasta -g /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/Enteritidis_P125109/Enteritidis_P125109.gff3 -m 500 -t 48 /global/bio/projets/GAMeR/Nicolas-Radomski/Python/ERR3997398/3_assembly/ERR3997398_contigs.header.single.number.parsed.fasta
 
 '''
-#### exemple of Bash command ####
+#### exemple of Bash command (sbatch_PairedEndAssemblyConda.sh) ####
 #!/bin/bash
 #SBATCH -p Research
 #SBATCH -o %x.%N.%j.out
 #SBATCH -e %x.%N.%j.err
 #SBATCH --cpus-per-task=48
 #SBATCH --job-name=test-20200922
-
-source /global/conda/bin/activate;conda activate PairedEndAssembly;
+source /global/conda/bin/activate;conda activate PairedEndAssembly; \
 python /global/bio/projets/GAMeR/Nicolas-Radomski/Python/PairedEndAssemblyConda.py \
  -t 48 \
  -n 100 \
@@ -38,9 +37,9 @@ python /global/bio/projets/GAMeR/Nicolas-Radomski/Python/PairedEndAssemblyConda.
  -denovo /global/conda/envs/PairedEndAssembly/bin/spades.py \
  -annot /global/conda/envs/PairedEndAssembly/bin/prokka \
  -qual /global/conda/envs/PairedEndAssembly/bin/quast.py
-
-#sbatch -p Research --cpus-per-task=48 -e %x.%N.%j.err -o %x.%N.%j.out sbatch_PairedEndAssemblyConda.sh
-'''	
+#### exemple of Bash command execution ####
+sbatch -p Research --cpus-per-task=48 -e %x.%N.%j.err -o %x.%N.%j.out sbatch_PairedEndAssemblyConda.sh
+'''
 
 import os, sys
 import argparse
