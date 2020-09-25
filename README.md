@@ -29,7 +29,7 @@ conda install -c bioconda trimmomatic
 #SBATCH -e %x.%N.%j.err
 #SBATCH --cpus-per-task=48
 #SBATCH --job-name=test-20200922
-source /global/conda/bin/activate;conda activate PairedEndAssembly;
+source /global/conda/bin/activate;conda activate PairedEndAssembly; \
 python /global/bio/projets/GAMeR/Nicolas-Radomski/Python/PairedEndAssemblyConda.py \
 	-t 48 \
 	-n 100 \
