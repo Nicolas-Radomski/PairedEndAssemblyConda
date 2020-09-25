@@ -8,7 +8,7 @@ The main script PairedEndAssemblyConda.py and module genomic.py (version 2020092
 The module genomic.py has to be with the present main script PairedEndAssemblyConda.py to lunch it.
 The Conda environment PairedEndAssembly has to be prepared as presented below.
 
-# Build the Condan Environment PairedEndAssembly
+# Build the Conda Environment PairedEndAssembly
 conda activate \
 which conda \
 conda create -n PairedEndAssembly \
