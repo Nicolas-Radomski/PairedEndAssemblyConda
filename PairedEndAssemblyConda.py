@@ -5,7 +5,15 @@
 # version for conda in a cluster: conda enviroment PairedEndAssembly
 # run BBnorn (step 1_normalization), Trimmomatic (step 2_trimming), Spades (step 3_assembly), prokka (4_annotation) and Quast (5_quality) 
 # based on paired-end reads from a single genomic sample
-# the present main script PairedEndAssemblyConda.py and module genomic.py (version 20200923) were prepared and tested with Python 3.6.2 (Septembre 2020)
+# the present main script PairedEndAssemblyConda.py and module genomic.py (version 20200923) were prepared and tested with Python and Conda packages below (Septembre 2020)
+# Name                    Version                   Build  Channel
+# bbmap                     38.84                h516909a_0    bioconda
+# biopython                 1.78             py37h8f50634_0    conda-forge
+# python                    3.7.8           h6f2ec95_1_cpython    conda-forge
+# quast                     5.0.2           py37pl526hb5aa323_2    bioconda
+# spades                    3.13.1                        0    bioconda
+# trimmomatic               0.39                          1    bioconda
+# prokka                    1.14.6                  pl526_0    bioconda
 # the module genomic.py has to be with the present main script PairedEndAssemblyConda.py to lunch it
 # Execute /global/conda/envs/PairedEndAssembly/bin/bbnorm.sh in=/global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/ERR3997398_R1.fastq.gz in2=/global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/ERR3997398_R2.fastq.gz out=/global/bio/projets/GAMeR/Nicolas-Radomski/Python/ERR3997398/1_normalization/ERR3997398_R1_N.fastq.gz out2=/global/bio/projets/GAMeR/Nicolas-Radomski/Python/ERR3997398/1_normalization/ERR3997398_R2_N.fastq.gz target=100 threads=48
 # Execute /global/conda/envs/PairedEndAssembly/bin/trimmomatic PE -threads 48 -phred33 /global/bio/projets/GAMeR/Nicolas-Radomski/Python/ERR3997398/1_normalization/ERR3997398_R1_N.fastq.gz /global/bio/projets/GAMeR/Nicolas-Radomski/Python/ERR3997398/1_normalization/ERR3997398_R2_N.fastq.gz /global/bio/projets/GAMeR/Nicolas-Radomski/Python/ERR3997398/2_trimming/ERR3997398_R1_P.fastq.gz /global/bio/projets/GAMeR/Nicolas-Radomski/Python/ERR3997398/2_trimming/ERR3997398_R1_UP.fastq.gz /global/bio/projets/GAMeR/Nicolas-Radomski/Python/ERR3997398/2_trimming/ERR3997398_R2_P.fastq.gz /global/bio/projets/GAMeR/Nicolas-Radomski/Python/ERR3997398/2_trimming/ERR3997398_R2_UP.fastq.gz ILLUMINACLIP:/global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/NexteraPE-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36

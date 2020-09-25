@@ -1,25 +1,61 @@
 # Usage
 The main Python script PairedEndAssemblyConda.py aims at performing de novo assembly of bacterial genomes from a Python module genomic.py and a Conda environment PairedEndAssembly.
 - This workflow run BBnorn (step 1_normalization), Trimmomatic (step 2_trimming), Spades (step 3_assembly), prokka (4_annotation) and Quast (5_quality), successively.
-- The main script PairedEndAssemblyConda.py and module genomic.py (version 20200923) were prepared and tested with Python 3.6.2 (Septembre 2020).
+- The main script PairedEndAssemblyConda.py and module genomic.py (version 20200923) were prepared and tested with Python and dependancies below (Septembre 2020).
 - The module genomic.py has to be with the present main script PairedEndAssemblyConda.py to lunch it properly.
 - The Conda environment PairedEndAssembly has to be prepared as presented below.
+- The user can use his own dependancies in his own bin.
 - The paired-end reads must be encoded ID_R1.fastq.gz and ID_R2.fastq.gz with ID meaning sample identifier.
-
+# Dependencies
+The main script PairedEndAssemblyConda.py and module genomic.py (version 20200923) were prepared and tested with dependencies below.
+# Name                    Version                   Build  Channel
+prokka                    1.14.6                  pl526_0    bioconda
+python                    3.7.8           h6f2ec95_1_cpython    conda-forge
+biopython                 1.78             py37h8f50634_0    conda-forge
+bbmap                     38.84                h516909a_0    bioconda
+spades                    3.13.1                        0    bioconda
+quast                     5.0.2           py37pl526hb5aa323_2    bioconda
+trimmomatic               0.39                          1    bioconda
 # Build the Conda Environment PairedEndAssembly
+## from available targeted Conda packages
 ```
 conda activate
-which conda
 conda create -n PairedEndAssembly
 conda activate PairedEndAssembly
-conda install -c conda-forge -c bioconda prokka
-conda install python=3.6.2=h02fb82a_12
+conda search prokka
+conda install -c bioconda prokka=1.14.6=pl526_0
+conda search python
+conda install -c conda-forge python=3.7.8=h6f2ec95_1_cpython
+conda search biopython
+conda install -c conda-forge biopython=1.78=py37h8f50634_0
+conda search bbmap
+conda install -c bioconda bbmap=38.84=h516909a_0
+conda search spades
+conda install -c bioconda spades=3.13.1=0
+conda search quast
+conda install -c bioconda quast=5.0.2=py37pl526hb5aa323_2
+conda search trimmomatic
+conda install -c bioconda trimmomatic=0.39=1
+```
+## from available updated Conda packages
+```
+conda activate
+conda create -n PairedEndAssembly
+conda activate PairedEndAssembly
+conda install -c bioconda prokka
+conda update -c bioconda prokka
+conda install -c conda-forge python
+conda update -c conda-forge python
 conda install -c conda-forge biopython
 conda update -c conda-forge biopython
 conda install -c bioconda bbmap
+conda update -c bioconda bbmap
 conda install -c bioconda spades
+conda update -c bioconda spades
 conda install -c bioconda quast
+conda update -c bioconda quast
 conda install -c bioconda trimmomatic
+conda update -c bioconda trimmomatic
 ```
 # Test the Python script PairedEndAssemblyConda.py with a single set of paired-end reads
 ## Prepare a single command in a Bash script (sbatch_PairedEndAssemblyConda.sh)
