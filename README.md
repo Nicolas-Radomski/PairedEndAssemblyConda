@@ -4,7 +4,7 @@ The main Python script PairedEndAssemblyConda.py aims at performing de novo asse
 - The main script PairedEndAssemblyConda.py and module genomic.py (version 20200923, Septembre 2020) were prepared and tested with Python and dependencies below.
 - The module genomic.py has to be with the present main script PairedEndAssemblyConda.py to lunch it properly.
 - The Conda environment PairedEndAssembly has to be prepared as presented below.
-- The user can use his own dependancies in his own bin.
+- The user can setup his own dependencies in his own bin.
 - The paired-end reads must be encoded ID_R1.fastq.gz and ID_R2.fastq.gz with ID meaning sample identifier.
 # Dependencies
 The main script PairedEndAssemblyConda.py and module genomic.py (version 20200923) were prepared and tested with Conda packages below (Name/Version/Build/Channel).
