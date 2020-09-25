@@ -56,8 +56,9 @@ conda update -c bioconda quast
 conda install -c bioconda trimmomatic
 conda update -c bioconda trimmomatic
 ```
-# Test the Python script PairedEndAssemblyConda.py with a single set of paired-end reads
-## prepare a single command in a Bash script (bash_PairedEndAssemblyConda.sh)
+# Test the Python script PairedEndAssemblyConda.py
+## with a single set of paired-end reads
+### prepare a single command in a Bash script (bash_PairedEndAssemblyConda.sh)
 ```
 #!/bin/bash
 #SBATCH -p Research
@@ -82,31 +83,31 @@ python /global/bio/projets/GAMeR/Nicolas-Radomski/Python/PairedEndAssemblyConda.
 	-annot /global/conda/envs/PairedEndAssembly/bin/prokka \
 	-qual /global/conda/envs/PairedEndAssembly/bin/quast.py
 ```
-## run the Bash script bash_PairedEndAssemblyConda.sh with sbatch
+### run the Bash script bash_PairedEndAssemblyConda.sh with sbatch
 ```
 sbatch bash_PairedEndAssemblyConda.sh
 ```
-# Lunch mutiple Bash commands to test the Python script PairedEndAssemblyConda.py with multiple sets of paired-end reads
-## remove the file comands.lst
+## with multiple sets of paired-end reads
+### remove the file comands.lst
 ```
 rm commands.lst
 ```
-## creat a file list_of_IDs.lst including a list of ID samples to process
+### creat a file list_of_IDs.lst including a list of ID samples to process
 ```
 gedit list_of_IDs.lst
 ```
-## creat a file commands.lst including a list of Bash commands
+### creat a file commands.lst including a list of Bash commands
 ```
 for l in `cat list_of_IDs.lst`; do 
 	echo "source /global/conda/bin/activate;conda activate PairedEndAssembly;python /global/bio/projets/GAMeR/Nicolas-Radomski/Python/PairedEndAssemblyConda.py -t 48 -n 100 -l 500 -R1 /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/$l _R1.fastq.gz -R2 /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/$l _R2.fastq.gz -adap /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/NexteraPE-PE.fa -prot /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/Enteritidis_P125109/Enteritidis_P125109_prot.fasta -nucl /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/Enteritidis_P125109/Enteritidis_P125109.fasta -coor /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/Enteritidis_P125109/Enteritidis_P125109.gff3 -norm /global/conda/envs/PairedEndAssembly/bin/bbnorm.sh -trim /global/conda/envs/PairedEndAssembly/bin/trimmomatic -denovo /global/conda/envs/PairedEndAssembly/bin/spades.py -annot /global/conda/envs/PairedEndAssembly/bin/prokka -qual /global/conda/envs/PairedEndAssembly/bin/quast.py";
 done >> commands.lst
 ```
-## remove spaces before the strings _R1.fastq.gz and _R2.fastq.gz in the file commands.lst
+### remove spaces before the strings _R1.fastq.gz and _R2.fastq.gz in the file commands.lst
 ```
 sed -i "s@ _R1.fastq.gz@_R1.fastq.gz@" commands.lst
 sed -i "s@ _R2.fastq.gz@_R2.fastq.gz@" commands.lst
 ```
-## Run the Bash commands of the file commands.lst with sarray
+### Run the Bash commands of the file commands.lst with sarray
 ```
 sarray -p Research --cpus-per-task=48 -e %x.%N.%j.err -o %x.%N.%j.out --job-name=test-20200925 commands.lst
 ```
