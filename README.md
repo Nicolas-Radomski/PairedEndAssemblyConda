@@ -1,5 +1,5 @@
 # Usage
-The Python script PairedEndAssemblyConda.py aims at performing de novo assembly of bacterial genomes from a Python module genomic.py and a Conda environment PairedEndAssembly.
+The main Python script PairedEndAssemblyConda.py aims at performing de novo assembly of bacterial genomes from a Python module genomic.py and a Conda environment PairedEndAssembly.
 This workflow run BBnorn (step 1_normalization), Trimmomatic (step 2_trimming), Spades (step 3_assembly), prokka (4_annotation) and Quast (5_quality), successively.
 The main script PairedEndAssemblyConda.py and module genomic.py (version 20200923) were prepared and tested with Python 3.6.2 (Septembre 2020).
 The module genomic.py has to be with the present main script PairedEndAssemblyConda.py to lunch it.
