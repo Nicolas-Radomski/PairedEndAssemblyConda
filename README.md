@@ -57,7 +57,7 @@ conda install -c bioconda trimmomatic
 conda update -c bioconda trimmomatic
 ```
 # Test the Python script PairedEndAssemblyConda.py with a single set of paired-end reads
-## Prepare a single command in a Bash script (sbatch_PairedEndAssemblyConda.sh)
+## Prepare a single command in a Bash script (bash_PairedEndAssemblyConda.sh)
 ```
 #!/bin/bash
 #SBATCH -p Research
@@ -82,9 +82,9 @@ python /global/bio/projets/GAMeR/Nicolas-Radomski/Python/PairedEndAssemblyConda.
 	-annot /global/conda/envs/PairedEndAssembly/bin/prokka \
 	-qual /global/conda/envs/PairedEndAssembly/bin/quast.py
 ```
-## Run the Bash script sbatch_PairedEndAssemblyConda.sh
+## Run the Bash script bash_PairedEndAssemblyConda.sh with sbatch
 ```
-sbatch sbatch_PairedEndAssemblyConda.sh
+sbatch bash_PairedEndAssemblyConda.sh
 ```
 # Run mutiple Bash commands to test the Python script PairedEndAssemblyConda.py with multiple sets of paired-end reads
 ## remove the file comands.lst
@@ -106,7 +106,7 @@ done >> commands.lst
 sed -i "s@ _R1.fastq.gz@_R1.fastq.gz@" commands.lst
 sed -i "s@ _R2.fastq.gz@_R2.fastq.gz@" commands.lst
 ```
-## lunch Bash commands of the file commands.lst with sarray
+## Run the Bash commands of the file commands.lst with sarray
 ```
 sarray -p Research --cpus-per-task=48 -e %x.%N.%j.err -o %x.%N.%j.out --job-name=test-20200925 commands.lst
 ```
