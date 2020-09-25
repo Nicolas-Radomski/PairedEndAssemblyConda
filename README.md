@@ -21,7 +21,7 @@ conda install -c bioconda spades
 conda install -c bioconda quast
 conda install -c bioconda trimmomatic
 ```
-# Run a single Bash command to test the Python script PairedEndAssemblyConda.py with a single set of paired-end reads
+# Prepare a single command in a Bash script (sbatch_PairedEndAssemblyConda.sh) to test the Python script PairedEndAssemblyConda.py with a single set of paired-end reads
 ```
 #!/bin/bash
 #SBATCH -p Research
@@ -45,6 +45,10 @@ python /global/bio/projets/GAMeR/Nicolas-Radomski/Python/PairedEndAssemblyConda.
 	-denovo /global/conda/envs/PairedEndAssembly/bin/spades.py \
 	-annot /global/conda/envs/PairedEndAssembly/bin/prokka \
 	-qual /global/conda/envs/PairedEndAssembly/bin/quast.py
+```
+# Run the Bash script sbatch_PairedEndAssemblyConda.sh to test the Python script PairedEndAssemblyConda.py with a single set of paired-end reads
+```
+sbatch -p Research --cpus-per-task=48 -e %x.%N.%j.err -o %x.%N.%j.out sbatch_PairedEndAssemblyConda.sh
 ```
 # Run mutiple Bash commands to test the Python script PairedEndAssemblyConda.py with multiple sets of paired-end reads
 ## remove the file comands.lst
