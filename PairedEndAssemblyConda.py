@@ -233,7 +233,7 @@ def main():
 	genomic.number_in_fasta(infilepath = singlelinecontigs, outfilepath = numbercontigs)
 
 	# pass the contigs.fasta file from single to multi lines with the function single_multi_fasta of the module genomics.py
-	multilinecontigs = assemblyoutput + R1id + '_' + 'contigs.header.multi.fasta'
+	multilinecontigs = assemblyoutput + R1id + '_' + 'contigs.header.multi.number.fasta'
 	genomic.single_multi_fasta(infilepath = numbercontigs, outfilepath = multilinecontigs)
 
 	# remove small contigs from the single line fasta file with the function parse_contigs_fasta of the module genomics.py
