@@ -20,7 +20,7 @@ conda update -c conda-forge biopython \
 conda install -c bioconda bbmap \
 conda install -c bioconda spades \
 conda install -c bioconda quast \
-conda install -c bioconda trimmomatic \
+conda install -c bioconda trimmomatic
 
 # Run a single the bash command to test the Python script PairedEndAssemblyConda.py with a single paired-end reads
 #!/bin/bash \
