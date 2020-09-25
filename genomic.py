@@ -3,7 +3,7 @@
 
 #### author: Nicolas Radomski ####
 # usefull functions from a personal module
-# the present mmodule genomic.py (version 20200923) were prepared and tested with Python 3.6.1 (Septembre 2020)
+# the present mmodule genomic.py (version 20200923) were prepared and tested with Python 3.6.2 (Septembre 2020)
 # for instance the function congratulation of the module genomic.py must be called in the main script like below:
 # import genomic
 # genomic.congratulation()
@@ -83,7 +83,7 @@ def multi_single_fasta(infilepath, outfilepath):
 		print("#### %s contigs are converted in a single line fasta file" % count)
 		print("#### The new single line fasta file is in %s" % outfilepath)
 
-# convert a fasta file from single to multi lines
+# convert a fasta file from multi to single lines
 from Bio import SeqIO
 def single_multi_fasta(infilepath, outfilepath):
 	with open(infilepath, "rU") as input_handle, open(outfilepath, "w") as output_handle:
