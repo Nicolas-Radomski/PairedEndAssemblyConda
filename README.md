@@ -15,7 +15,7 @@ biopython                 1.78             py37h8f50634_0    conda-forge \
 bbmap                     38.84                h516909a_0    bioconda \
 spades                    3.13.1                        0    bioconda \
 quast                     5.0.2           py37pl526hb5aa323_2    bioconda \
-trimmomatic               0.39                          1    bioconda \
+trimmomatic               0.39                          1    bioconda
 # Build the Conda Environment PairedEndAssembly
 ## from available targeted Conda packages
 ```
