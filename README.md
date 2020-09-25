@@ -84,7 +84,7 @@ python /global/bio/projets/GAMeR/Nicolas-Radomski/Python/PairedEndAssemblyConda.
 ```
 ## Run the Bash script sbatch_PairedEndAssemblyConda.sh
 ```
-sbatch -p Research --cpus-per-task=48 -e %x.%N.%j.err -o %x.%N.%j.out sbatch_PairedEndAssemblyConda.sh
+sbatch sbatch_PairedEndAssemblyConda.sh
 ```
 # Run mutiple Bash commands to test the Python script PairedEndAssemblyConda.py with multiple sets of paired-end reads
 ## remove the file comands.lst
