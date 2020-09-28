@@ -5,7 +5,8 @@ The main Python script PairedEndAssemblyConda.py aims at performing de novo asse
 - The module genomic.py has to be with the present main script PairedEndAssemblyConda.py to lunch it properly.
 - The Conda environment PairedEndAssembly has to be prepared as presented below.
 - The user can setup his own dependencies in his own bin.
-- The paired-end reads must be encoded ID_R1.fastq.gz and ID_R2.fastq.gz with ID meaning sample identifier.
+- The paired-end reads must be named ID_R1.fastq.gz and ID_R2.fastq.gz for forward and reverse reads, respectively (ID means sample identifier).
+- The quality scores paired-end reads must be encoded with Phred33.
 # Dependencies
 The main script PairedEndAssemblyConda.py and module genomic.py (version 20200923) were prepared and tested with Conda packages below (Name/Version/Build/Channel).
 - prokka/1.14.6/pl526_0/bioconda
