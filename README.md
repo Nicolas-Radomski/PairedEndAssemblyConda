@@ -101,13 +101,10 @@ gedit list_of_IDs.lst
 for l in `cat list_of_IDs.lst`; do 
 	echo "source /global/conda/bin/activate;conda activate PairedEndAssembly;python /global/bio/projets/GAMeR/Nicolas-Radomski/Python/PairedEndAssemblyConda.py -t 48 -n 100 -l 500 -R1 /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/$l _R1.fastq.gz -R2 /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/$l _R2.fastq.gz -adap /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/NexteraPE-PE.fa -prot /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/Enteritidis_P125109/Enteritidis_P125109_prot.fasta -nucl /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/Enteritidis_P125109/Enteritidis_P125109.fasta -coor /global/bio/projets/GAMeR/Nicolas-Radomski/Python/data/Enteritidis_P125109/Enteritidis_P125109.gff3 -norm /global/conda/envs/PairedEndAssembly/bin/bbnorm.sh -trim /global/conda/envs/PairedEndAssembly/bin/trimmomatic -denovo /global/conda/envs/PairedEndAssembly/bin/spades.py -annot /global/conda/envs/PairedEndAssembly/bin/prokka -qual /global/conda/envs/PairedEndAssembly/bin/quast.py";
 done >> commands.lst
-```
-### 2.4/ remove spaces before the strings _R1.fastq.gz and _R2.fastq.gz in the file commands.lst
-```
 sed -i "s@ _R1.fastq.gz@_R1.fastq.gz@" commands.lst
 sed -i "s@ _R2.fastq.gz@_R2.fastq.gz@" commands.lst
 ```
-### 2.5/ run the Bash commands of the file commands.lst with sarray
+### 2.4/ run the Bash commands of the file commands.lst with sarray
 ```
 sarray -p Research --cpus-per-task=48 -e %x.%N.%j.err -o %x.%N.%j.out --job-name=test-20200925 commands.lst
 ```
