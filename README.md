@@ -57,7 +57,7 @@ conda update -c bioconda quast
 conda install -c bioconda trimmomatic
 conda update -c bioconda trimmomatic
 ```
-# Lunching of the script PairedEndAssemblyConda.py
+# Launching of the script PairedEndAssemblyConda.py
 ## 1/ With a single set of paired-end reads
 ### 1.1/ prepare a single command in a Bash script (bash_PairedEndAssemblyConda.sh)
 ```
