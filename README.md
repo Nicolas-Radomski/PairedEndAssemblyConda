@@ -2,7 +2,7 @@
 The main Python script PairedEndAssemblyConda.py aims at performing de novo assembly of bacterial genomes from a Python module genomic.py and a Conda environment PairedEndAssembly.
 - This workflow run BBnorn (step 1_normalization), Trimmomatic (step 2_trimming), Spades (step 3_assembly), Prokka (4_annotation) and Quast (5_quality), successively.
 - The main script PairedEndAssemblyConda.py and module genomic.py (version 20200923, Septembre 2020) were prepared and tested with Python and dependencies below.
-- The module genomic.py has to be with the present main script PairedEndAssemblyConda.py to lunch it properly.
+- The module genomic.py has to be with the present main script PairedEndAssemblyConda.py to launch it properly.
 - The Conda environment PairedEndAssembly has to be prepared as presented below.
 - The user can setup his own dependencies in his own bin.
 - The paired-end reads must be named ID_R1.fastq.gz and ID_R2.fastq.gz for forward and reverse reads, respectively (ID means sample identifier).
