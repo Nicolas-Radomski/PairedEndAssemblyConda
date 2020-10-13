@@ -268,7 +268,7 @@ def main():
 	# congtratulate users with the function congratulation of the module genomic.py
 	genomic.congratulation()
 
-# driver code: if the code above is a scrypt, call  main() function, rather than to considere it as a module
+# driver code: if the code above is a script, call  main() function, rather than to considere it as a module
 if __name__ == "__main__":
 	# calling main() function
 	main()
