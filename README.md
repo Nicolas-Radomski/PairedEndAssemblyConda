@@ -6,6 +6,8 @@ The main Python script PairedEndAssemblyConda.py aims at performing de novo asse
 - The Conda environment PairedEndAssembly has to be prepared as presented below.
 - The user can setup his own dependencies in his own bin.
 - The paired-end reads must be named ID_R1.fastq.gz and ID_R2.fastq.gz for forward and reverse reads, respectively (ID means sample identifier).
+- The IDs have to include a maximum of 16 alphanumeric characters (AZ, az , 09) and only the underscore (_) is accepted in the IDs.
+- The accents (‘, ¨, ^), space ( ), hyphen (-), and special characters (/, \, », (, }, =, +, @) are not accepted in the IDs.
 - The quality scores paired-end reads must be encoded with Phred33.
 # Dependencies
 The main script PairedEndAssemblyConda.py and module genomic.py (version 20200923) were prepared and tested with Conda packages below (Name/Version/Build/Channel).
@@ -89,7 +91,7 @@ python /global/bio/projets/GAMeR/Nicolas-Radomski/Python/PairedEndAssemblyConda.
 sbatch bash_PairedEndAssemblyConda.sh
 ```
 ## 2/ With multiple sets of paired-end reads
-### 2.1/ creat a file list_of_IDs.lst including a list of ID samples to process
+### 2.1/ creat a file list_of_IDs.lst including a list of ID samples to process (one ID per line with \n)
 ```
 gedit list_of_IDs.lst
 ```
