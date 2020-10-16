@@ -6,7 +6,7 @@ The main Python script PairedEndAssemblyConda.py aims at performing de novo asse
 - The Conda environment PairedEndAssembly has to be prepared as presented below.
 - The user can setup his own dependencies in his own bin.
 - The paired-end reads must be named ID_R1.fastq.gz and ID_R2.fastq.gz for forward and reverse reads, respectively (ID means sample identifier).
-- The IDs have to include a maximum of 16 alphanumeric characters (AZ, az , 09) and only the underscore (_) is accepted in the IDs.
+- The IDs have to include a maximum of 16 alphanumeric characters (AZ, az , 09) including potential underscores (_).
 - The accents (‘, ¨, ^), space ( ), hyphen (-), and special characters (/, \, », (, }, =, +, @) are not accepted in the IDs.
 - The quality scores paired-end reads must be encoded with Phred33.
 # Dependencies
