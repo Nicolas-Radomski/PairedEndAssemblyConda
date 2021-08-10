@@ -109,6 +109,6 @@ sed -i "s@ _R2.fastq.gz@_R2.fastq.gz@" commands.lst
 sarray -p Research --cpus-per-task=48 -e %x.%N.%j.err -o %x.%N.%j.out --job-name=test-20200925 commands.lst
 ```
 # Acknowledgment
-My old colleagues Arnaud Felten and Ludovic Mallet with whom I learned a lot Python
+My old colleagues Arnaud Felten and Ludovic Mallet with whom I learned a lot about Python
 # Author
 Nicolas Radomski
