@@ -110,6 +110,9 @@ sarray -p Research --cpus-per-task=48 -e %x.%N.%j.err -o %x.%N.%j.out --job-name
 ```
 # Illustration
 ![Workflow](https://github.com/Nicolas-Radomski/PairedEndAssemblyConda/blob/master/illustration.png)
+# References
+- First version (i.e. SPAdes assembly): Fritsch L., A. Felten, F. Palma, J.F Mariet, N. Radomski, M.Y. Mistou, J.C. Augustin and L. Guillier. Insights from genome-wide approaches to identify variants associated to phenotypes at pan-genome scale: Application to L. monocytogenes ability to grow in cold conditions. 2018, International Journal of Food Microbiology, 291(16): 181-188, doi.org/10.1016/j.ijfoodmicro.2018.11.028
+- Second version (i.e. ARTwork): Palma F., Brauge T., Radomski N., Mallet L., Felten A., Mistou M.Y., Brisabois A., Guillier L. and G. Midelet-Bourdin. Dynamics of mobile genetic elements of Listeria monocytogenes persisting in ready-to-eat seafood processing plants in France. 2020, BMC Genomics, 21(1): 130, doi: 10.1186/s12864-020-6544-x
 # Acknowledgment
 My old colleagues Arnaud Felten and Ludovic Mallet with whom I learned a lot about Python
 # Author
